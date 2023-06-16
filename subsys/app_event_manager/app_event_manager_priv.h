@@ -131,6 +131,7 @@ extern "C" {
 		BUILD_ASSERT(offsetof(struct ename, header) == 0,		\
 				 "");						\
 		if (event != NULL) {						\
+			memset(event,0,sizeof(*event)); 					\
 			event->header.type_id = _EVENT_ID(ename);		\
 		}								\
 		return event;							\
